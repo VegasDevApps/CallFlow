@@ -1,0 +1,66 @@
+<div class="contaner">
+    <h1 class="text-center">יצירת/עדכון פרטי לקוח</h1>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="mt-5">
+        <div class="container" dir="rtl">
+            <div class="row mt-3">
+                <div class="col-1">
+                    <span style="color: red;">
+                        תעודת זהות
+                    </span>
+                </div>
+                <div class="col-5">
+                    <input formControlName="CitizenID" type="text" class="form-control" id="citizenId">
+                </div>
+                <div class="col-1">
+                    <span style="color: red;">
+                        טלפון
+                    </span>
+                </div>
+                <div class="col-5">
+                    <input formControlName="PhoneNumber" type="text" class="form-control" id="phoneNumber">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-1">
+                    שם פרטי
+                </div>
+                <div class="col-5">
+                    <input formControlName="FirstName" type="text" class="form-control" id="firstname">
+                </div>
+                <div class="col-1">
+                    תאריך לידה
+                </div>
+                <div class="col-5">
+                    <input 
+                        formControlName="BitrthDate" 
+                        type="date" 
+                        width="100%" 
+                        class="form-control" 
+                        id="birthday">
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-1">
+                    שם משפחה
+                </div>
+                <div class="col-5">
+                    <input formControlName="LastName" type="text" class="form-control" id="lastname">
+                </div>
+                <div class="col-1">
+                    הערות נוספות
+                </div>
+                <div class="col-5">
+                    <input formControlName="Notes" type="tex" class="form-control" id="notes">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-11"></div>
+                <div class="col-1">
+                    <button [disabled]="!form.valid" type="submit" class="btn btn-primary">שמור</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

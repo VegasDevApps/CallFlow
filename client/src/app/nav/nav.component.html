@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-md">
+    <div class="container">
+        <ul class="navbar-nav flex-column">
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link text-dark" routerLinkActive="active" [routerLink]="['/']">ראשי</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" routerLinkActive="active" [routerLink]="['edit']">יצירת/עדכון פרטי לקוח</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" routerLinkActive="active" [routerLink]="['search']">חיפוש</a>
+            </li>
+        </ul>
+    </div>
+</nav>

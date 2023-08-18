@@ -1,0 +1,43 @@
+<div class="container" dir="rtl">
+    <h1 class="text-center mb-5">חיפוש לקוח</h1>
+
+    <div class="container">
+        <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+            <div>
+              <label for="findTo">ערך</label>
+              <input type="text" id="findTo" formControlName="findTo">
+            </div>
+          
+            <div>
+              <label for="findBy">אמצעי זיהוי</label>
+              <select id="findBy" formControlName="findBy">
+                <option value="CitizenID">תעודת זהות</option>
+                <option value="PhoneNumber">טלפון</option>
+                
+              </select>
+            </div>
+          
+            <button type="submit" [disabled]="searchForm.invalid">Submit</button>
+          </form>
+          
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">תעודת זהות</th>
+                <th scope="col">טלפון</th>
+                <th scope="col">שם פרטי</th>
+                <th scope="col">שם משפחה</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of searchResult">
+                <th><a [routerLink]="'/edit/' + client.Id"> {{ client.CitizenID }}</a></th>
+                <td>{{ client.PhoneNumber }}</td>
+                <td>{{ client.FirstName }}</td>
+                <td>{{ client.LastName }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
